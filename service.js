@@ -1,14 +1,31 @@
 const axios = require('axios')
 
 
-axios.get('https://api.github.com/users/' + username)
-  .then(function(response){
-    console.log(response.data); // ex.: { user: 'Your User'}
-    console.log(response.status); // ex.: 200
-  });  
 
-// Requisições POST, note há um parâmetro extra indicando os parâmetros da requisição
-axios.post('/save', { firstName: 'Marlon', lastName: 'Bernardes' })
-  .then(function(response){
-    console.log('salvo com sucesso')
-  });  
+var empreendimento = "37075" 
+var nome = "testolino3" // data.name API Octa
+var ddd = "21"
+var telefone = "969796979"
+var origem = "whatsapp"
+
+
+function coletar() {
+
+axios({
+  method: 'post',
+  url: `http://inova.housecrm.com.br/api/email?empreendimento=${empreendimento}&nome=${nome}&ddd=${ddd}&telefone=${telefone}origem=whatsapp`,
+  data: {
+    empreendimento: empreendimento,
+    nome: nome,
+    ddd: ddd,
+    telefone: telefone,
+    origem: origem 
+  }
+});
+
+}
+
+coletar()
+console.log('Função efetuada')
+
+// empreendimento nome ddd telefone origem
