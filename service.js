@@ -16,6 +16,7 @@ app.post("/collector", (req, res) => {
     res.status(200).end() // 
   })
 
+ 
 
 // Estruturação de dados  
 
