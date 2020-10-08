@@ -25,18 +25,21 @@ function requisitar() {
     console.log(event.data);
     
     var data = {};
-  if (event.data) {
-    data = JSON.parse(event.data);
+    if (event.data) {
+      data = JSON.parse(event.data);
+      const name = data.event.body.Name;
+      const number = data.event.body.PhoneContacts[0].Number
+      var telefone = number
+      var nome = name
   }
-
-   console.log(data.Name)
+   console.log(data)  
+   console.log(nome)
+   console.log(telefone)
    
-  
-
-    var nome = data['Name']
+   
+     
     var empreendimento = "37075" 
-    var ddd = "21"
-    var telefone = "21547854784"
+    var ddd = "21"   
     var origem = "whatsapp" 
 
     axios({
@@ -56,5 +59,5 @@ function requisitar() {
 
 
 requisitar()
-console.log('Collector: Novo Lead, efetuando coleta') 
+console.log('🚀 Collector: Robô preparado para receber dados dos leads') 
 
