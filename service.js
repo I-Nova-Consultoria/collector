@@ -36,15 +36,9 @@ function requisitar() {
       wait(15000)
       console.log("Collector: Esperando cliente digitar o nome");
       const name = data.event.body.Name;
-      const number = data.event.body.PhoneContacts[0].Number      
-      const empreendimento1 = data.event.body.CustomField.empreendimento1
-      var empreendimento = ""
-      if (empreendimento1 !== null) { 
-        empreendimento = "37075" 
-      } else {
-        empreendimento = "37075"
-      }
-     
+      const number = data.event.body.PhoneContacts[0].Number     
+      
+      var empreendimento = "37075"    
       var telefone = number
       var nome = name
       
