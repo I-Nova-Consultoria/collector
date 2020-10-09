@@ -33,7 +33,7 @@ function requisitar() {
     var data = {};
     if (event.data) {
       data = JSON.parse(event.data);      
-      wait(60000)
+      wait(15000)
       console.log("Collector: Esperando cliente digitar o nome");
       const name = data.event.body.Name;
       const number = data.event.body.PhoneContacts[0].Number      
