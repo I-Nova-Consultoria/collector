@@ -1,7 +1,13 @@
 const https = require("https")
 const EventSource = require('eventsource');
 const axios = require('axios')
-
+function wait(ms){
+  var start = new Date().getTime();
+  var end = start;
+  while(end < start + ms) {
+    end = new Date().getTime();
+ }
+}
 const options = {
   hostname: "api.pipedream.com",
   port: 443,
@@ -26,19 +32,37 @@ function requisitar() {
     
     var data = {};
     if (event.data) {
-      data = JSON.parse(event.data);
+      data = JSON.parse(event.data);      
+      wait(15000)
+      console.log("Collector: Esperando cliente digitar o nome");
       const name = data.event.body.Name;
-      const number = data.event.body.PhoneContacts[0].Number
+      const number = data.event.body.PhoneContacts[0].Number     
+      
+      const empreedimento1 = data.event.body.CustomField.chat_origem
+      console.log(empreedimento1)
+
+      var empreendimento = ""
+      if (empreedimento1 == "Zona oeste"){
+        empreendimento = '37075'
+    } else {
+        empreendimento = "37154"
+    }
+      
+   
       var telefone = number
       var nome = name
+      
+     
+      // var nome = name
   }
    console.log(data)  
    console.log(nome)
-   console.log(telefone)
-   
+   console.log(telefone)  
+   console.log(empreendimento) 
+
    
      
-    var empreendimento = "37075" 
+    
     var ddd = "21"   
     var origem = "whatsapp" 
 
@@ -60,4 +84,3 @@ function requisitar() {
 
 requisitar()
 console.log('🚀 Collector: Robô preparado para receber dados dos leads') 
-
