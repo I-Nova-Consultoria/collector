@@ -38,6 +38,7 @@ function requisitar() {
       const name = data.event.body.Name;
       const number = data.event.body.PhoneContacts[0].Number     
       
+<<<<<<< HEAD
       const empreedimento1 = data.event.body.CustomField.chat_origem
       console.log(empreedimento1)
 
@@ -49,6 +50,9 @@ function requisitar() {
     }
       
    
+=======
+      var empreendimento = "37075"    
+>>>>>>> 98fd67e6ef270b6d0000e8f1c3adf6410e6a0637
       var telefone = number
       var nome = name
       
@@ -58,11 +62,19 @@ function requisitar() {
    console.log(data)  
    console.log(nome)
    console.log(telefone)  
+<<<<<<< HEAD
    console.log(empreendimento) 
 
    
      
     
+=======
+   console.log(empreendimento)
+   
+   
+     
+    var empreendimento = ""
+>>>>>>> 98fd67e6ef270b6d0000e8f1c3adf6410e6a0637
     var ddd = "21"   
     var origem = "whatsapp" 
 
